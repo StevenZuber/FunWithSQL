@@ -29,25 +29,16 @@ public class InputDbDAO implements InputDAO {
 					List<String> item = new ArrayList<>();
 					for (int c = 0; c < cols; c++) {
 						item.add(rs.getString(c + 1));
-						// if (c < cols - 1) {
-						// System.out.print(" ");
-						// }
 					}
 					items.add(item);
-
 				}
 				rs.close();
 			}
-			// else {
-			// count = stmt.executeUpdate(sqlString);
-			// System.out.printf("%n%1d row(s) updated.%n", count);
-			// }
 			stmt.close();
 			conn.close();
 		} catch (SQLException sqle) {
 			System.err.println(sqle);
 		}
-
 		catch (ClassNotFoundException cnfe) {
 			System.err.println(cnfe);
 
